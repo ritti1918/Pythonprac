@@ -1,0 +1,25 @@
+Find Factorial & No Of Trailing Zeros In A Factorial Of A Number
+
+
+def factorial(num):
+    result=1
+    while(num>1):
+        result*=num
+        num-=1
+        return result
+
+​
+
+def facTrailingzeros(num):
+    count = 0
+    i = 5
+    while num>=i:
+        count += num // i
+        i *= 5
+    return count
+
+
+
+​num=int(input("Enter a number= "))
+print(f"The factorial of {num} is {factorial(num)}")
+print(f"Number of trailing zero = {facTrailingzeros(num)}")
