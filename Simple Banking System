@@ -1,0 +1,50 @@
+# Parent Class: User
+# 1.Holds details about an User
+# 2.Has a function to show user details
+# Child Class: Bank
+# 1.Stores details about the account balance
+# 2.Stores details about the amount
+# 3.Allows for deposits,withdraw,view balance
+
+# Parent Class
+class User():
+    def __init__(self,name,age,gender):
+        self.name=name
+        self.age=age
+        self.gender=gender
+        
+
+    def show_user_details(self):
+        print("Details ")
+        print("Name",self.name)
+        print("Age",self.age)
+        print("Gender",self.gender)
+
+#Child Class
+class Bank(User):
+    def __init__(self,name,age,gender):
+        super().__init__(name,age,gender)
+        self.balance=0
+    def deposit(self,amount):
+        self.amount=amount
+        self.balance=self.balance+amount
+        print(f"Account balance has been updated : {self.balance} ")
+    def withdraw(self,amount):
+        self.amount=amount
+        if self.amount > self.balance:
+            print(f"Insufficient Balance | Balance Available = {self.balance}")
+        else:
+            self.balance=self.balance-self.amount
+            print(f"Account Balance has been updated : {self.balance}")
+    def view_balance(self):
+        self.show_user_details()
+        print("Account balance: ",self.balance)
+
+user1 = Bank("Alice", 30, "Female")
+user1.show_user_details()
+user1.view_balance()
+user1.deposit(1000)
+user1.view_balance()
+user1.withdraw(5000)
+user1.withdraw(50)
+user1.view_balance()
