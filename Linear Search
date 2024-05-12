@@ -1,0 +1,9 @@
+def LinearSearch(list,target):
+    for i in range(len(list)):
+        if (list[i] == target):
+            return i+1
+    return -1
+    
+list=[20,13,32,25,40]
+target=int(input("Enter the target element= "))
+print(LinearSearch(list,target))
