@@ -1,0 +1,15 @@
+def selection_sort(list):
+    for i in range(len(list)-1):
+        minpose=i
+        for j in range(i,len(list)):
+            if list[j] < list[minpose]:
+                minpose=j
+        temp=list[i]
+        list[i]=list[minpose]
+        list[minpose]=temp
+        print(list)
+
+
+list=[5,3,8,6,7,2]
+selection_sort(list)
+print(list)
