@@ -1,0 +1,15 @@
+def BinarySearch(lst,target):
+    left,right=0,len(lst)-1
+    while left<=right:
+        mid=(left+right)//2
+        if lst[mid]==target:
+            return mid+1
+        elif lst[mid]<target:
+            left=mid+1
+        else:
+            right=mid-1
+    return -1
+lst=[20,13,32,25,40]
+lst.sort()
+target=int(input("Enter the target element= "))
+print(BinarySearch(lst,target))
